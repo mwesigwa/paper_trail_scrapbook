@@ -3,5 +3,6 @@ test.log
 
 spec/dummy_app/config/database.yml
 spec/dummy_app/log/
+spec/examples.txt
 
 coverage*

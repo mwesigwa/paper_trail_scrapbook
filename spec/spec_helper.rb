@@ -70,4 +70,5 @@ DatabaseCleaner.strategy = :truncation
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = active_record_gem_version >= ::Gem::Version.new('5')
+  config.example_status_persistence_file_path = "spec/examples.txt"
 end

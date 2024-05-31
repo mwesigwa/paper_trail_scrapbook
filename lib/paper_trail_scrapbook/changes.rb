@@ -135,7 +135,10 @@ module PaperTrailScrapbook
                     if version.class.object_changes_col_is_json?
                       serialized_changes = object_changes
                      else
-                      serialized_changes = YAML.load(object_changes)
+                      serialized_changes = YAML.safe_load(
+                        object_changes, permitted_classes: ActiveRecord.yaml_column_permitted_classes,
+                        aliases: true
+                      )
                      end
                      serialized_changes.except(*PaperTrailScrapbook.config.scrub_columns)
                    else

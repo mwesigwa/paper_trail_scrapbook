@@ -16,6 +16,8 @@ module Dummy
     config.active_support.escape_html_entities_in_json = true
     config.active_support.test_order = :sorted
 
+    config.active_record.yaml_column_permitted_classes = [BigDecimal, Symbol, Time]
+
     # Disable assets in rails 4.2. In rails 5, config does not respond to
     # assets, probably because it was moved out of railties to some other gem,
     # and we only have dev. dependencies on railties, not all of rails. When
